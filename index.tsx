@@ -13,9 +13,10 @@ const App: React.VFC = () => {
   // 打卡记录
   const [markers, setMarkers] = React.useState<google.maps.LatLng[]>([]);
   const [zoom, setZoom] = React.useState(14); // initial zoom
+  // Set default location as Denver
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
-    lat: 0,
-    lng: 0,
+    lat: 39.742043,
+    lng: -104.991531,
   });
   const onIdle = (m: google.maps.Map) => {
     console.log(m.getCenter()!.toJSON());
