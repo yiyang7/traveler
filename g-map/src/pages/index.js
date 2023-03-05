@@ -2,6 +2,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { useEffect, useState } from "react";
 import "./style.css";
 import "../utils/rem";
+// import { ethers } from "ethers";
 
 let featureLayer;
 let infoWindow;
@@ -16,7 +17,22 @@ const featureStyleOptions = {
   fillOpacity: 0.3,
 };
 
+// Set up Ethers.js
+// const provider = new ethers.providers.JsonRpcProvider("http://localhost:5173");
+var defaultAccount;
+
+const token_name = 'tr';
+const token_symbol = 'TR';
+
+// token contract
+const token_address = ''
+const token_abi = []
+// const token_contract = new ethers.Contract(token_address, token_abi, provider.getSigner());
+
+
 const App = () => {
+  // await token_contract.connect(provider.getSigner(defaultAccount)).mint(total_supply / 2);
+  // const balance = await token_contract.connect(provider.getSigner(defaultAccount)).balanceOf(defaultAccount);
   // balance
   const [balance, updateBalance] = useState(0);
   const [checkList, setCheckList] = useState([]);
@@ -26,23 +42,23 @@ const App = () => {
   // fetch records
   const fetchData = () => {
     setCheckList(["ChIJzxcfI6qAa4cR1jaKJ_j0jhE"]);
-    setMarkers([
-      { lat: 39.695, lng: -104.988 },
-      { lat: 39.675, lng: -104.995 },
-      { lat: 39.665, lng: -104.966 },
-      { lat: 39.78, lng:-104.999 },
-    ]);
-    setHeatmapList([
-      { lat: 39.69145, lng: -104.9971 },
-      { lat: 39.69245, lng: -104.9972 },
-      { lat: 39.69345, lng: -104.9973 },
-      { lat: 39.69445, lng: -104.9974 },
-      { lat: 39.69545, lng: -104.9975 },
-      { lat: 39.69645, lng: -104.9976 },
-      { lat: 39.69745, lng: -104.9977 },
-      { lat: 39.69845, lng: -104.9978 },
-      { lat: 39.69945, lng: -104.9979 },
-    ])
+    // setMarkers([
+    //   { lat: 39.695, lng: -104.988 },
+    //   { lat: 39.675, lng: -104.995 },
+    //   { lat: 39.665, lng: -104.966 },
+    //   { lat: 39.78, lng:-104.999 },
+    // ]);
+    // setHeatmapList([
+    //   { lat: 39.69145, lng: -104.9971 },
+    //   { lat: 39.69245, lng: -104.9972 },
+    //   { lat: 39.69345, lng: -104.9973 },
+    //   { lat: 39.69445, lng: -104.9974 },
+    //   { lat: 39.69545, lng: -104.9975 },
+    //   { lat: 39.69645, lng: -104.9976 },
+    //   { lat: 39.69745, lng: -104.9977 },
+    //   { lat: 39.69845, lng: -104.9978 },
+    //   { lat: 39.69945, lng: -104.9979 },
+    // ])
   };
   // check in
   const handleCheckIn = () => {
@@ -105,7 +121,7 @@ const App = () => {
   const initMap = async () => {
     try {
       loader = new Loader({
-        apiKey: "AIzaSyC_DzF3RKg_La1pMU8ZZBExdF_vReDSMW4",
+        apiKey: "",
         version: "beta",
         mapId: "c53551e361192a0f",
         language: "en",
