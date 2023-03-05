@@ -105,7 +105,7 @@ const App = () => {
   const initMap = async () => {
     try {
       loader = new Loader({
-        apiKey: "",
+        apiKey: "AIzaSyC_DzF3RKg_La1pMU8ZZBExdF_vReDSMW4",
         version: "beta",
         mapId: "c53551e361192a0f",
         language: "en",
